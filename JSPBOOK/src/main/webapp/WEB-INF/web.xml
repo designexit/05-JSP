@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+	<security-role>
+		<role-name>role1</role-name>
+	</security-role>
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>JSPBook</web-resource-name><!-- 프로젝트이름 -->
+			<url-pattern>/ch10/security02.jsp</url-pattern><!-- 설정할 페이지 -->
+			<http-method>GET</http-method>
+		</web-resource-collection>
+		<auth-constraint><!-- 권한설정 -->
+			<description></description>
+			<role-name>role1</role-name>
+		</auth-constraint>
+	</security-constraint>
+	<login-config>
+		<auth-method>FORM</auth-method>
+		<form-login-config>
+			<form-login-page>/ch10/login.jsp</form-login-page>
+			<form-error-page>/ch10/login_failed.jsp</form-error-page>
+		</form-login-config>
+
+	</login-config>
+	
+	<servlet>
+		<servlet-name>myController</servlet-name>
+		<servlet-class>ch18.com.controller.ControllerServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>myController</servlet-name>
+		<url-pattern>/ch18/ControllerServlet</url-pattern>
+	</servlet-mapping>
+	
+</web-app>
