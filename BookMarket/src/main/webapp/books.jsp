@@ -54,7 +54,14 @@
 			</div>
 			<hr>
 			<%
-			}
+				}
+				
+				if(rs != null)
+					rs.close();
+				if(pstmt != null)
+					pstmt.close();
+				if(conn != null)
+					conn.close();
 			%>
 		</div>
 	</div>
