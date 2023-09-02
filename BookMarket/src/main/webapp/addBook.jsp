@@ -25,7 +25,7 @@
 			<a href="logout.jsp" class="btn btn-sm btn-success pull-right">Logout</a>
 		</div>
 		<!-- form -->
-		<form name="newProduct" action="./processAddBook.jsp" class="form-horizontal" method="post" enctype="multipart/form-data">
+		<form name="newBook" action="./processAddBook.jsp" class="form-horizontal" method="post" enctype="multipart/form-data">
 			<div class="form-group row">
 				<label class="col-sm-2"><fmt:message key="bookId"/></label>
 				<div class="col-sm-3">

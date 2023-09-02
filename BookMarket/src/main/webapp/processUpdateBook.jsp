@@ -14,13 +14,16 @@
 	
 	MultipartRequest multi = new MultipartRequest(request, realFolder, maxSize, encType, new DefaultFileRenamePolicy());
 	
-	String productId = multi.getParameter("productId");
+	String bookId = multi.getParameter("bookId");
 	String name = multi.getParameter("name");
 	String unitPrice = multi.getParameter("unitPrice");
-	String description = multi.getParameter("description");
-	String manufacturer = multi.getParameter("manufacturer");
+	String author = multi.getParameter("author");
+	String publisher = multi.getParameter("publisher");
+	String releaseDate = multi.getParameter("releaseDate");
+	String totalPages = multi.getParameter("totalPages");
+	String description = multi.getParameter("description");	
 	String category = multi.getParameter("category");
-	String unitsInStock = multi.getParameter("unitsInStock");
+	String unitsInStock = multi.getParameter("unitsInStock");	
 	String condition = multi.getParameter("condition"); 
 	
 	Integer price;
@@ -44,36 +47,42 @@
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
 	
-	String sql = "select * from product where p_id=?";
+	String sql = "select * from book where b_id=?";
 	pstmt = conn.prepareStatement(sql);
-	pstmt.setString(1, productId);
+	pstmt.setString(1, bookId);
 	rs = pstmt.executeQuery();
 	
 	if(rs.next()) {
 		if(fileName != null){
-			sql = "UPDATE product SET p_name=?, p_unitPrice=?, p_description=?, p_manufacturer=?, p_category=?, p_unitsInStock=?, p_condition=?, p_fileName=? WHERE p_id=?";
+			sql = "UPDATE book SET b_name=?, b_unitPrice=?, b_author=?, b_publisher=?, b_description=?, b_category=?, b_unitsInStock=?, b_releaseDate=?, b_condition=?, b_fileName=? WHERE b_id=?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, name);
 			pstmt.setInt(2, price);
-			pstmt.setString(3, description);
-			pstmt.setString(4, manufacturer);
-			pstmt.setString(5, category);
-			pstmt.setLong(6, stock);
-			pstmt.setString(7, condition);
-			pstmt.setString(8, fileName);
-			pstmt.setString(9, productId);
+			pstmt.setString(3, author);
+			pstmt.setString(4, publisher);
+			pstmt.setString(5, description);
+			pstmt.setString(6, category);
+			pstmt.setLong(7, stock);
+			pstmt.setLong(8, totalPages);
+			pstmt.setLong(9, releaseDate);			
+			pstmt.setString(10, condition);
+			pstmt.setString(11, fileName);
+			pstmt.setString(12, bookId);
 			pstmt.executeUpdate();
 		} else {
-			sql = "UPDATE product SET p_name=?, p_unitPrice=?, p_description=?, p_manufacturer=?, p_category=?, p_unitsInStock=?, p_condition=? WHERE p_id=?";
+			sql = "UPDATE book SET b_name=?, b_unitPrice=?, b_author=?, b_publisher=?, b_description=?, b_category=?, b_unitsInStock=?, b_releaseDate=?, b_condition=? WHERE b_id=?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, name);
 			pstmt.setInt(2, price);
-			pstmt.setString(3, description);
-			pstmt.setString(4, manufacturer);
-			pstmt.setString(5, category);
-			pstmt.setLong(6, stock);
-			pstmt.setString(7, condition);
-			pstmt.setString(8, productId);
+			pstmt.setString(3, author);
+			pstmt.setString(4, publisher);
+			pstmt.setString(5, description);
+			pstmt.setString(6, category);
+			pstmt.setLong(7, stock);
+			pstmt.setLong(8, totalPages);
+			pstmt.setLong(9, releaseDate);			
+			pstmt.setString(10, condition);
+			pstmt.setString(12, bookId);
 			pstmt.executeUpdate();
 		}
 		
@@ -85,6 +94,6 @@
 	if(conn != null)
 		conn.close();
 	
-	response.sendRedirect("editProduct.jsp?edit=update");
+	response.sendRedirect("editBook.jsp?edit=update");
 
 %>

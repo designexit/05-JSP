@@ -4,19 +4,19 @@
 	version="3.0">
 	<security-role>
 		<description></description>
-		<role-name>admin</role-name>
+		<role-name>guest</role-name>
 	</security-role>
 	<security-constraint>
-		<display-name>WebMarket</display-name>
+		<display-name>BookMarket</display-name>
 		<web-resource-collection>
-			<web-resource-name>WebMarket</web-resource-name>
+			<web-resource-name>BookMarket</web-resource-name>
 			<description></description>
-			<url-pattern>/addProduct.jsp</url-pattern>
-			<url-pattern>/editProduct.jsp</url-pattern>
+			<url-pattern>/addBookjsp</url-pattern>
+			<url-pattern>/editBook.jsp</url-pattern>
 		</web-resource-collection>
 		<auth-constraint><!-- 권한설정 -->
 			<description>권한 관리자명</description>
-			<role-name>admin</role-name>
+			<role-name>guest</role-name>
 		</auth-constraint>
 	</security-constraint>
 	<login-config>

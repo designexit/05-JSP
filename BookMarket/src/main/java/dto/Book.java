@@ -10,14 +10,15 @@ public class Book implements Serializable {
 	private String name;
 	private Integer unitPrice;
 	private String author;
-	private String description;
 	private String publisher;
+	private String releaseDate;
+	private long totalPages;
+	private String description;
 	private String category;
 	private long unitInStock;
-	private long totalPages;
-	private String releaseDate;
 	private String condition;
 	private String filename;
+	private int quantity;
 	
 	public Book() {
 		super();
@@ -126,6 +127,16 @@ public class Book implements Serializable {
 
 	public void setFilename(String filename) {
 		this.filename = filename;
+	}
+
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 	
 	
