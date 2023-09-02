@@ -50,7 +50,7 @@
 						sum = sum + total;
 				%>
 				<tr>
-					<td><%=book.getBookId() %> - <%=book.getPname() %></td>
+					<td><%=book.getBookId() %> - <%=book.getName() %></td>
 					<td><%=book.getUnitPrice() %></td>
 					<td><%=book.getQuantity() %></td>
 					<td><%=total %></td>

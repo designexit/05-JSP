@@ -1,0 +1,1 @@
+INSERT INTO book values('B1234', '', '', '', )

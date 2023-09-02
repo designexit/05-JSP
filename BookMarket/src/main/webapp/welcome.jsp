@@ -13,6 +13,14 @@
 			<div class="navbar-header">
 				<a class="navbar-brand" href="">Home</a>
 			</div>
+			<div>
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item"><a href="./books.jsp" class="nav-link">상품 목록</a></li>
+					<li class="nav-item"><a href="./addBook.jsp" class="nav-link">상품 등록</a></li>
+					<li class="nav-item"><a href="./editBook.jsp?edit=update" class="nav-link">상품 수정</a></li>
+					<li class="nav-item"><a href="./editBook.jsp?edit=delete" class="nav-link">상품 삭제</a></li>
+				</ul>
+			</div>
 		</div>
 	</nav>
 	<%! String greeting= "Book Market Mall";

@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="dto.Book"%>
-<%@ page import="dao.BookRepository" %>
+<%@page import="java.util.ArrayList"%>
+<%-- <%@ page import="dao.BookRepository" %> --%>
 <%-- <jsp:useBean id="bookDAO" class="dao.BookRepository" scope="session" /> --%>
 <!DOCTYPE html>
 <html>
@@ -27,16 +28,23 @@
 			<h1 class="display-3">도서 정보</h1>
 		</div>
 	</div>
+	<%@ include file="dbconn.jsp" %>
 	<%
-	String id = request.getParameter("id");
-	BookRepository dao = BookRepository.getInstance();
-	Book book = dao.getBookById(id);
+		String bookId = request.getParameter("id");	
+		
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "SELECT * FROM book WHERE b_id = ?";
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1,productId);
+		rs = pstmt.executeQuery();
+		if(rs.next()){
 	%>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-5">
-				<!-- <img src="/upload/<%=book.getFilename()%>" style="width:100%"> -->
-				<img src="/upload/<%=book.getFilename()%>" style="width:70%">
+				<!-- <img src="/upload/<%-- <%=book.getFilename()%> --%>" style="width:100%"> -->
+				<img src="/Users/minkyoungkim/upload/<%=book.getFilename()%>" style="width:70%">
 			</div>
 			<%@ include file="dbconn.jsp" %>
 			<div class="col-md-6">
@@ -51,7 +59,7 @@
 				<h4><%=book.getUnitPrice()%>원</h4>
 				<div class="row">
 					<p>
-						<form name="addForm" action="./addCart.jsp?id=<%=rs.getString("b_id") %>" method="post">
+						form name="addForm" action="./addCart.jsp?id=<%=rs.getString("b_id") %>" method="post">
 							<a href="#" class="btn btn-info" onclick="addToCart()">상품 주문&raquo;</a>
 							<a href="./cart.jsp" class="btn btn-warning">장바구니&raquo;</a>
 							<a href="./books.jsp?" class="btn btn-secondary">상품 목록 &raquo;</a>

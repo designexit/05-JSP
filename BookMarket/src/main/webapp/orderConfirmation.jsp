@@ -89,7 +89,7 @@
 						sum = sum + total;
 				%>
 				<tr>
-					<td class="text-center"><em><%=book.getPname() %></em></td>
+					<td class="text-center"><em><%=book.getName() %></em></td>
 					<td class="text-center"><%=book.getQuantity() %></td>
 					<td class="text-center"><%=book.getUnitPrice() %>원</td>
 					<td class="text-center"><%=total %>원</td>
