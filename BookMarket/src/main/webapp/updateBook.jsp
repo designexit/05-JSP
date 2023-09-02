@@ -36,7 +36,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-5">
-					<img src="/upload/<%=rs.getString("b_filename") %>" alt="Image" style="width: 100%" />
+					<img src="/Users/minkyoungkim/upload/<%=rs.getString("b_filename") %>" alt="Image" style="width: 100%" />
+<%-- 					<img src="/upload/<%=rs.getString("b_filename") %>" alt="Image" style="width: 100%" /> --%>
 				</div>
 				<!-- 상품 폼 -->
 				<div class="col-md-7">
