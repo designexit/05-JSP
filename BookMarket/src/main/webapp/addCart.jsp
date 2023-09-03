@@ -42,7 +42,7 @@
 		book.setDescription(rs.getString("b_description"));
 		book.setCategory(rs.getString("b_category"));
 		book.setUnitInStock(rs.getLong("b_unitsInStock"));
-		book.setTotalPages(rs.getLong("b_totalPage"));
+		book.setTotalPages(rs.getLong("b_totalPages"));
 		book.setCondition(rs.getString("b_condition"));
 		book.setFilename(rs.getString("b_filename"));
 		goodsList.add(book);

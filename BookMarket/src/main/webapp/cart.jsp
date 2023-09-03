@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.ArrayList" %>  
 <%@ page import="dto.Book"%>
-<%@ page import="dao.BookRepository" %>
+<%-- <%@ page import="dao.BookRepository" %> --%>
 <!DOCTYPE html>
 <html>
 <head>

@@ -44,7 +44,6 @@
 							<a href="./book.jsp?id=<%=rs.getString("b_id") %>"
 								class="btn btn-secondary" role="button">상세 정보 &raquo;</a>
 						</p>
-	
 					</div>
 	
 					<div class="text-secondary">

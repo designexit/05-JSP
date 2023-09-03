@@ -41,25 +41,30 @@
 				rs = pstmt.executeQuery();
 				while(rs.next()){
 			%>
-			<div class="col-md-4">
-				<img src="/upload/<%=rs.getString("p_fileName") %>" style="width: 100%">
-				<h3><%=rs.getString("p_name") %></h3>
-				<p><%=rs.getString("p_description") %></p>
-				<p><%=rs.getString("p_UnitPrice") %>원</p>
-				<p>
-					<%
+			<div class="row mb-3">
+				<div class="col-4">
+					<%-- <img src="/upload/<%=rs.getString("b_fileName") %>" style="width: 100%"> --%>
+					<img src="/Users/minkyoungkim/upload/<%=rs.getString("b_fileName") %>" style="width:40%" />
+				</div>
+				<div class="col-8 text-left ">
+					<h3><span><%=rs.getString("b_category") %></span> <span><%=rs.getString("b_name") %></span></h3>
+					<div class="row justify-content-between">
+						<p class="col-10 mt-4"><%=rs.getString("b_description") %></p>
+						<p class="col-2 align-self-center">
+							<%
 						if(edit.equals("update")){
 						%>
-						<a href="./updateBook.jsp?id=<%=rs.getString("p_id") %>" class="btn btn-success" role="button">수정&raquo;</a>
-					<%
-						} else if (edit.equals("delete")){
-					%>
-					<a href="#" onclick="deleteConfirm('<%=rs.getString("p_id") %>')" class="btn btn-danger" role="button">삭제&raquo;</a>
-					<%
-						}
-					%>
-				
-				</p>
+							<a href="./updateBook.jsp?id=<%=rs.getString("b_id") %>" class="btn btn-success" role="button">수정&raquo;</a>
+						<%
+							} else if (edit.equals("delete")){
+						%>
+						<a href="#" onclick="deleteConfirm('<%=rs.getString("b_id") %>')" class="btn btn-danger" role="button">삭제&raquo;</a>
+						<%
+							}
+						%>
+						</p>
+					</div>
+				</div>
 			</div>
 			<%
 				}

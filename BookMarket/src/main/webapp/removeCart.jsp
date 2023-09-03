@@ -15,10 +15,10 @@
 	
 	Book book = dao.getBookById(id);
 	if(book == null){
-		response.sendRedirect("exceptionNoBookId.jsp");
+		//response.sendRedirect("exceptionNoBookId.jsp");
+		response.sendRedirect("books.jsp");
 	}
-	
-	
+		
 	ArrayList<Book> castList = (ArrayList<Book>) session.getAttribute("cartlist");
 	Book goodsQnt = new Book();
 	for(int i=0; i<castList.size(); i++) {
