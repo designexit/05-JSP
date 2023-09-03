@@ -17,16 +17,6 @@
 	
 	MultipartRequest multi = new MultipartRequest(request, realFolder, maxSize, encType, new DefaultFileRenamePolicy());
 	
-	/* String productId = multi.getParameter("p_id)");
-	String pname = multi.getParameter("p_name");
-	String unitPrice = multi.getParameter("p_unitPrice");
-	String description = multi.getParameter("p_description");
-	String manufacturer = multi.getParameter("p_manufacturer");
-	String category = multi.getParameter("p_category");
-	String unitsInStock = multi.getParameter("p_unitsInStock");
-	String condition = multi.getParameter("p_condition");  */
-	
-
 	String productId = multi.getParameter("productId");
 	String name = multi.getParameter("name");
 	String unitPrice = multi.getParameter("unitPrice");
@@ -74,7 +64,7 @@
 	pstmt.setString(2, p_name);
 	pstmt.setInt(3, p_unitPrice);
 	pstmt.setString(4, p_description);
-	pstmt.setString(5, p_category);
+	pstmt.setString(5, p_category);s
 	pstmt.setString(6, p_manufacturer);
 	pstmt.setLong(7, p_unitsInStock);
 	pstmt.setString(8, p_condition);

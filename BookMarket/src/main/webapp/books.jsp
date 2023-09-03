@@ -33,7 +33,8 @@
 			<div class="row mb-3">
 				<div class="col-4">
 					<%-- <img src="/upload/<%=book.getFilename() %>" style="width:40%" /> --%>
-					<img src="/Users/minkyoungkim/upload/<%=rs.getString("b_fileName") %>" style="width:40%" />
+					<%-- <img src="/Users/minkyoungkim/upload/<%=rs.getString("b_fileName") %>" style="width:40%" /> --%>
+					<img src="/Users/minkyoungkim/upload/ISBN1234.jpg" style="width=40%">
 				</div>
 				<div class="col-8 text-left ">
 					<h3><span><%=rs.getString("b_category") %></span> <span><%=rs.getString("b_name") %></span></h3>

@@ -19,7 +19,8 @@
 </script>
 </head>
 <body>
-	<jsp:include page="menu.jsp" />
+	<%@ include file = "menu.jsp" %>
+	<%-- <jsp:include page="menu.jsp" /> --%>
 	<div class="jumbotron">
 		<div class="container">
 			<h1 class="display-3">도서 정보</h1>
@@ -62,6 +63,7 @@
 							<a href="./books.jsp?" class="btn btn-secondary">상품 목록 &raquo;</a>
 						</form>
 					</p>
+					
 				</div>
 
 			</div>
