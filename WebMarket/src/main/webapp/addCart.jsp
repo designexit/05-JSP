@@ -25,7 +25,7 @@
 		response.sendRedirect("exceptionNoProductId.jsp");
 	}
 	
-	sql = "select * from prodct";
+	sql = "select * from product";
 	pstmt = conn.prepareStatement(sql);
 	rs = pstmt.executeQuery();
 	

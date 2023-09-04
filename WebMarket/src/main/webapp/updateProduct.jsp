@@ -104,7 +104,7 @@
 						</div>
 						<div class="form-group row">
 							<div class="col-sm-offset-2 col-sm-10">
-								<input type="submit" value="등록" class="btn-primary">
+								<input type="submit" value="수정" class="btn-primary">
 							</div>
 						</div>
 						

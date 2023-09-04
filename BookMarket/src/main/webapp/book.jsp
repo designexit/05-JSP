@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="./resources/css/bootstrap.min.css">
-<title>상품 상세 정보</title>
+<title>도서 상세 정보</title>
 <script type="text/javascript">
 	function addToCart() {
 		if (confirm("상품을 장바구니에 추가하시겠습니까?")){
@@ -23,7 +23,7 @@
 	<%-- <jsp:include page="menu.jsp"/> --%>
 	<div class="jumbotron">
 		<div class="container">
-			<h1 class="display-3">상품 정보</h1>
+			<h1 class="display-3">도서 정보</h1>
 		</div>
 	</div>
 	<%@ include file="dbconn.jsp" %>
@@ -41,11 +41,10 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-5">
-				<%-- <img src="/upload/<%=rs.getString("b_fileName")%>" style="width:100%"> --%>
-				<img src="/Users/minkyoungkim/upload/<%=rs.getString("b_fileName")%>" style="width:70%">
+				<img src="/upload/<%=rs.getString("b_fileName")%>" style="width:80%">
 			</div>
 			<div class="col-md-6">
-				<h3><%=rs.getString("b_category")%> <%=rs.getString("b_name")%></h3>
+				<h3>[<%=rs.getString("b_category")%>] <%=rs.getString("b_name")%></h3>
 				<p><%=rs.getString("b_description")%></p>
 				<p><b>도서 코드 : </b><span class="badge badge-danger"><%=rs.getString("b_id")%></span></p>
 				<p><b>출판사 : </b><%=rs.getString("b_publisher")%></p>

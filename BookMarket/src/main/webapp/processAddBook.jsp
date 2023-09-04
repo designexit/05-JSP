@@ -11,8 +11,7 @@
 <% request.setCharacterEncoding("UTF-8");
 
 	String filename="";
-	String realFolder = "/Users/minkyoungkim/upload";
-	//String realFolder = "C:\\upload";
+	String realFolder = "C:\\upload";
 	int maxSize = 5 * 1024 * 1024;
 	String encType = "utf-8";
 	
@@ -23,11 +22,11 @@
 	String unitPrice = multi.getParameter("unitPrice");
 	String author = multi.getParameter("author");
 	String publisher = multi.getParameter("publisher");
-	String releaseDate = multi.getParameter("releaseDate");
-	String totalPages = multi.getParameter("totalPages");
 	String description = multi.getParameter("description");
 	String category = multi.getParameter("category");
 	String unitsInStock = multi.getParameter("unitsInStock");
+	String releaseDate = multi.getParameter("releaseDate");
+	String totalPages = multi.getParameter("totalPages");
 	String condition = multi.getParameter("condition"); 
 	
 	Integer price;
@@ -59,18 +58,18 @@
 	
 	PreparedStatement pstmt = null;
 	
-	String sql = "insert into product values(?,?,?,?,?,?,?,?,?,?,?,?)";
+	String sql = "insert into book values(?,?,?,?,?,?,?,?,?,?,?,?)";
 	pstmt = conn.prepareStatement(sql);
 	pstmt.setString(1, bookId);
 	pstmt.setString(2, name);
 	pstmt.setInt(3, price);
 	pstmt.setString(4, author);
 	pstmt.setString(5, publisher);
-	pstmt.setString(6, releaseDate);
-	pstmt.setLong(7, pages);
-	pstmt.setString(8, description);
-	pstmt.setString(9, category);
-	pstmt.setLong(10, stock);
+	pstmt.setString(6, description);
+	pstmt.setString(7, category);
+	pstmt.setLong(8, stock);
+	pstmt.setLong(9, pages);
+	pstmt.setString(10, releaseDate);
 	pstmt.setString(11, condition);
 	pstmt.setString(12, fileName);
 	

@@ -11,7 +11,7 @@
 	ResultSet rs = pstmt.executeQuery();
 	
 	if(rs.next()){
-		sql = "delete from book where p_id=?";
+		sql = "delete from book where b_id=?";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, bookId);
 		pstmt.executeUpdate();

@@ -81,7 +81,7 @@
 				</div>
 			</div>
 			<div class="form-group row">
-				<label class="col-sm-2"><fmt:message key="unitInStock"/></label>
+				<label class="col-sm-2"><fmt:message key="unitsInStock"/></label>
 				<div class="col-sm-3">
 					<input type="text" id="unitsInStock" name="unitsInStock" class="form-control">
 				</div>

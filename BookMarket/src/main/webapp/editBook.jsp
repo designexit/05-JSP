@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="./resources/css/bootstrap.min.css">
-<title>상품 편집</title>
+<title>도서 편집</title>
 <script type="text/javascript">
 	function deleteConfirm(id) {
 		if (confirm("해당 상품을 삭제합니다.") == true){
@@ -26,7 +26,7 @@
 	<jsp:include page="menu.jsp"/>
 	<div class="jumbotron">
 		<div class="container">
-			<h1 class="display-3">상품 편집</h1>
+			<h1 class="display-3">도서 편집</h1>
 		</div>
 	</div>
 	<div class="container">
@@ -43,11 +43,10 @@
 			%>
 			<div class="row mb-3">
 				<div class="col-4">
-					<%-- <img src="/upload/<%=rs.getString("b_fileName") %>" style="width: 100%"> --%>
-					<img src="/Users/minkyoungkim/upload/<%=rs.getString("b_fileName") %>" style="width:40%" />
+					<img src="/upload/<%=rs.getString("b_fileName") %>" style="width:40%" />
 				</div>
 				<div class="col-8 text-left ">
-					<h3><span><%=rs.getString("b_category") %></span> <span><%=rs.getString("b_name") %></span></h3>
+					<h3><span>[<%=rs.getString("b_category") %>]</span> <span><%=rs.getString("b_name") %></span></h3>
 					<div class="row justify-content-between">
 						<p class="col-10 mt-4"><%=rs.getString("b_description") %></p>
 						<p class="col-2 align-self-center">
@@ -64,8 +63,13 @@
 						%>
 						</p>
 					</div>
+					<div class="text-secondary">
+						<span><%=rs.getString("b_author") %> <i> | </i></span> <span><%=rs.getString("b_publisher") %><i>
+								| </i></span> <span><%=rs.getString("b_unitPrice") %>원</span>
+					</div>
 				</div>
 			</div>
+			<hr>
 			<%
 				}
 				

@@ -11,7 +11,7 @@
 		<web-resource-collection>
 			<web-resource-name>BookMarket</web-resource-name>
 			<description></description>
-			<url-pattern>/addBookjsp</url-pattern>
+			<url-pattern>/addBook.jsp</url-pattern>
 			<url-pattern>/editBook.jsp</url-pattern>
 		</web-resource-collection>
 		<auth-constraint><!-- 권한설정 -->
